@@ -24,11 +24,11 @@ function analyze() {
     xhr.onload = function(e) {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
-            if (${response['result']} === 'most_beautiful') {
-                el('result-label').innerHTML = `Yes, that's her!`;
-            } else {
-                el('result-label').innerHTML = `Nope. Try again!`;
-            }
+                if (response === 'most_beautiful') {
+                    el('result-label').innerHTML = `Yes, that's her!`;
+                } else {
+                    el('result-label').innerHTML = `Nope. Try again!`;
+                }
         }
         el('analyze-button').innerHTML = 'Analyze';
     }
