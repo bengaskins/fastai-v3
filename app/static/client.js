@@ -24,8 +24,7 @@ function analyze() {
     xhr.onload = function(e) {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
-            console.log(response);
-                if (response == 'most_beautiful') {
+                if (response['result'] == 'most_beautiful') {
                     el('result-label').innerHTML = `Yes, that's her!`;
                 } else {
                     el('result-label').innerHTML = `Nope. Try again!`;
